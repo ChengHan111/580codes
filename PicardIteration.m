@@ -1,0 +1,22 @@
+clf;
+nsteps = 100;
+niter = 10;
+tmax = 3;
+x0 = ones(1,nsteps);
+xsave = x0;
+del = tmax/nsteps;
+
+for k=1:niter;
+    int(1)=0;
+    t(1)=0;
+    for i=2:nsteps;
+        t(i)=(i-1)*del;
+        int(i)=int(i-1)+h(xsave(i-1)*del);
+    end;
+    x = x0+int;
+    plot(t,x);
+    grid on;
+    hold on;
+    pause;
+    xsave = x;
+end;
